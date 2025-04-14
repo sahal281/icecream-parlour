@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Navbar, Nav, Form, FormControl, Button, Container, Row, Col, Card, Badge, Modal, ListGroup, FormGroup, FormLabel, FormSelect } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart, faSearch, faMoon, faSun, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart, faMoon, faSun, faTimes, faStar, faGift, faClock, faPercent } from '@fortawesome/free-solid-svg-icons';
+import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import './App.css';
 
 const App = () => {
@@ -14,14 +15,14 @@ const App = () => {
   const [selectedFlavor, setSelectedFlavor] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [orderSuccess, setOrderSuccess] = useState(false);
-  const [showFlavors, setShowFlavors] = useState(false);
+  const [showFlavors, setShowFlavors] = useState(true);
 
   const iceCreamFlavors = [
     {
       id: 1,
       name: 'Gadbad Ice Cream',
       price: 180,
-      image: 'https://i.imgur.com/XYZ123.jpg',
+      image: 'https://tse3.mm.bing.net/th?id=OIP.2iSCw4SS4CxCk-uHA1eL9wHaKV&pid=Api&P=0&h=180',
       description: 'A Mangalorean specialty with multiple layers of ice cream, fruits, and nuts',
       category: 'Specialty',
       rating: 4.8
@@ -30,7 +31,7 @@ const App = () => {
       id: 2,
       name: 'Mango Mastani',
       price: 160,
-      image: 'https://i.imgur.com/XYZ123.jpg',
+      image: 'https://tse1.mm.bing.net/th?id=OIP.XFhwFtCGQeiZFarXyvCFPwHaLG&pid=Api&P=0&h=180',
       description: 'Rich mango ice cream with fresh mango pieces and cream',
       category: 'Fruit',
       rating: 4.7
@@ -39,7 +40,7 @@ const App = () => {
       id: 3,
       name: 'Tender Coconut Ice Cream',
       price: 150,
-      image: 'https://i.imgur.com/XYZ123.jpg',
+      image: 'https://i.ytimg.com/vi/kPM3Y5wZ43Q/maxresdefault.jpg',
       description: 'Refreshing coconut flavored ice cream with tender coconut pieces',
       category: 'Fruit',
       rating: 4.6
@@ -48,7 +49,7 @@ const App = () => {
       id: 4,
       name: 'Kesar Pista',
       price: 140,
-      image: 'https://i.imgur.com/XYZ123.jpg',
+      image: 'https://tse3.mm.bing.net/th?id=OIP.2xjAKwzxtxGURlfcJ-lvvwHaHa&pid=Api&P=0&h=180',
       description: 'Classic saffron and pistachio flavored ice cream',
       category: 'Traditional',
       rating: 4.5
@@ -57,7 +58,7 @@ const App = () => {
       id: 5,
       name: 'Chocolate Fudge',
       price: 150,
-      image: 'https://i.imgur.com/XYZ123.jpg',
+      image: 'https://tse2.mm.bing.net/th?id=OIP.D6fEl_X5cRgbCzavJqmmrgHaKX&pid=Api&P=0&h=180',
       description: 'Rich chocolate ice cream with fudge swirls',
       category: 'Chocolate',
       rating: 4.7
@@ -66,7 +67,7 @@ const App = () => {
       id: 6,
       name: 'Butterscotch',
       price: 140,
-      image: 'https://i.imgur.com/XYZ123.jpg',
+      image: 'https://tse4.mm.bing.net/th?id=OIP.WBUSsHmRSZbKCaEeWbl6egHaLH&pid=Api&P=0&h=180',
       description: 'Creamy butterscotch flavored ice cream with caramel swirls',
       category: 'Cream',
       rating: 4.6
@@ -75,7 +76,7 @@ const App = () => {
       id: 7,
       name: 'Strawberry Delight',
       price: 160,
-      image: 'https://i.imgur.com/XYZ123.jpg',
+      image: 'https://tse3.mm.bing.net/th?id=OIP.GYAuGSmTbIrPAUd8Sm7i_wHaHa&pid=Api&P=0&h=180',
       description: 'Fresh strawberry ice cream with real fruit pieces',
       category: 'Fruit',
       rating: 4.8
@@ -84,7 +85,7 @@ const App = () => {
       id: 8,
       name: 'Vanilla Bean',
       price: 130,
-      image: 'https://i.imgur.com/XYZ123.jpg',
+      image: 'https://tse2.mm.bing.net/th?id=OIP.cS-vantzMfqxGxBAvrOgLgHaHa&pid=Api&P=0&h=180',
       description: 'Classic vanilla ice cream with real vanilla bean specks',
       category: 'Traditional',
       rating: 4.5
@@ -92,25 +93,25 @@ const App = () => {
   ];
 
   const specialOffers = [
-    { 
-      id: 1, 
-      title: 'Happy Hour', 
-      description: '20% off all scoops from 2-4 PM', 
-      icon: '🕒',
+    {
+      id: 1,
+      title: 'Family Pack',
+      description: 'Buy 3 ice creams and get 1 free',
+      icon: faGift,
       validUntil: '2024-12-31'
     },
-    { 
-      id: 2, 
-      title: 'Family Pack', 
-      description: 'Buy 4 scoops, get 1 free', 
-      icon: '👨‍👩‍👧‍👦',
+    {
+      id: 2,
+      title: 'Happy Hours',
+      description: '20% off on all ice creams from 3 PM to 6 PM',
+      icon: faClock,
       validUntil: '2024-12-31'
     },
-    { 
-      id: 3, 
-      title: 'Student Special', 
-      description: '15% off with valid student ID', 
-      icon: '🎓',
+    {
+      id: 3,
+      title: 'Student Special',
+      description: '15% off for students with valid ID',
+      icon: faPercent,
       validUntil: '2024-12-31'
     }
   ];
@@ -185,54 +186,49 @@ const App = () => {
   };
 
   return (
-    <div className={`app ${darkMode ? 'dark-mode' : ''}`}>
-      {/* Navigation Bar */}
-      <Navbar bg="primary" variant="dark" expand="lg" className="gradient-nav">
+    <div className={`app ${darkMode ? 'bg-dark text-light' : 'bg-light'}`}>
+      {/* Navbar */}
+      <Navbar bg="transparent" expand="lg" className="py-3">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="#">
             <img
-              src="https://i.imgur.com/ABCD123.jpg"
-              width="40"
-              height="40"
-              className="d-inline-block align-top logo"
-              alt="Ideal Cafe logo"
+              src="https://tse2.mm.bing.net/th?id=OIP.IRknlTfPsuZ_ln82v1K9VgAAAA&pid=Api&P=0&h=180"
+              alt="Ideal Cafe Logo"
+              width="50"
+              height="50"
+              className="d-inline-block align-top me-2"
             />
-            {' '}Ideal Cafe
+            Ideal Cafe
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Toggle aria-controls="navbar-nav" />
+          <Navbar.Collapse id="navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#menu">Menu</Nav.Link>
-              <Nav.Link href="#offers">Offers</Nav.Link>
-              <Nav.Link href="#locations">Locations</Nav.Link>
-              <Nav.Link href="#contact">Contact Us</Nav.Link>
-              <Nav.Link href="#signin">Sign In</Nav.Link>
+              <Nav.Link href="#home" onClick={() => window.scrollTo(0, 0)}>Home</Nav.Link>
+              <Nav.Link href="#flavors" onClick={() => document.getElementById('flavors-section')?.scrollIntoView({ behavior: 'smooth' })}>Flavors</Nav.Link>
+              <Nav.Link href="#offers" onClick={() => document.getElementById('offers-section')?.scrollIntoView({ behavior: 'smooth' })}>Offers</Nav.Link>
+              <Nav.Link href="#contact" onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}>Contact</Nav.Link>
             </Nav>
             <Form className="d-flex me-3">
               <FormControl
                 type="search"
-                placeholder="Search ice creams..."
+                placeholder="Search flavors..."
                 className="me-2"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
-              <Button variant="outline-primary">
-                <FontAwesomeIcon icon={faSearch} />
-              </Button>
             </Form>
-            <Button 
-              variant="outline-primary" 
+            <Button
+              variant={darkMode ? "light" : "dark"}
               className="me-2"
               onClick={() => setDarkMode(!darkMode)}
             >
               <FontAwesomeIcon icon={darkMode ? faSun : faMoon} />
             </Button>
-            <Button variant="outline-primary" className="position-relative" onClick={() => setShowCart(true)}>
+            <Button variant="yellow" onClick={() => setShowCart(true)}>
               <FontAwesomeIcon icon={faShoppingCart} />
               {cart.length > 0 && (
-                <Badge bg="danger" className="position-absolute top-0 start-100 translate-middle">
-                  {cart.reduce((total, item) => total + item.quantity, 0)}
+                <Badge bg="danger" className="ms-1">
+                  {cart.length}
                 </Badge>
               )}
             </Button>
@@ -241,41 +237,34 @@ const App = () => {
       </Navbar>
 
       {/* Hero Section */}
-      <header className="hero">
-        <div className="hero-content">
-          <h1>Welcome to Ideal Cafe</h1>
-          <p>Mangalore's Favorite Ice Cream Parlor</p>
-          <Button 
-            variant="primary" 
-            size="lg" 
-            className="cta-button"
-            onClick={scrollToFlavors}
-          >
+      <header className="position-relative text-center text-white py-5" style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.imgur.com/XYZ123.jpg")', backgroundSize: 'cover', backgroundPosition: 'center', height: '90vh' }}>
+        <div className="position-absolute top-50 start-50 translate-middle w-100">
+          <h1 className="display-4 fw-bold mb-3">Welcome to Ideal Cafe</h1>
+          <p className="lead mb-4">Mangalore's Favorite Ice Cream Parlor</p>
+          <Button variant="blue" size="lg" className="rounded-pill px-4" onClick={scrollToFlavors}>
             Order Now
           </Button>
         </div>
       </header>
 
       {/* Flavors Section */}
-      <section id="flavors-section" className="flavors py-5">
+      <section id="flavors-section" className="flavors-section py-5">
         <Container>
-          <h2 className="text-center mb-5 position-relative">Our Flavors</h2>
+          <h2 className="text-center mb-5 text-purple">Our Flavors</h2>
           <Row xs={1} md={2} lg={4} className="g-4">
             {filteredFlavors.map(flavor => (
               <Col key={flavor.id}>
-                <Card className="flavor-card h-100">
-                  <div className="card-img-container">
-                    <Card.Img variant="top" src={flavor.image} alt={flavor.name} />
+                <Card className="h-100 shadow-sm">
+                  <div className="position-relative overflow-hidden" style={{ height: '250px' }}>
+                    <Card.Img variant="top" src={flavor.image} alt={flavor.name} className="h-100 object-fit-cover" />
+                    <div className="position-absolute top-0 start-0 w-100 h-100 bg-gradient-to-bottom" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7))' }} />
                   </div>
                   <Card.Body>
-                    <Card.Title>{flavor.name}</Card.Title>
+                    <Card.Title className="text-purple">{flavor.name}</Card.Title>
                     <Card.Text>{flavor.description}</Card.Text>
                     <div className="d-flex justify-content-between align-items-center">
-                      <span className="price">₹{flavor.price}</span>
-                      <Button 
-                        variant="primary" 
-                        onClick={() => handleOrderNow(flavor)}
-                      >
+                      <span className="price-tag">₹{flavor.price}</span>
+                      <Button variant="pink" className="rounded-pill" onClick={() => handleOrderNow(flavor)}>
                         Order Now
                       </Button>
                     </div>
@@ -288,18 +277,20 @@ const App = () => {
       </section>
 
       {/* Special Offers Section */}
-      <section className="offers">
+      <section className="special-offers py-5 text-white">
         <Container>
-          <h2>Special Offers</h2>
-          <Row className="g-4">
-            {specialOffers.map((offer) => (
-              <Col key={offer.id} xs={12} md={4}>
-                <Card className="h-100 offer-card">
+          <h2 className="text-center mb-5">Special Offers</h2>
+          <Row xs={1} md={3} className="g-4">
+            {specialOffers.map(offer => (
+              <Col key={offer.id}>
+                <Card className="h-100 bg-transparent border-0">
                   <Card.Body className="text-center">
-                    <span className="offer-icon">{offer.icon}</span>
-                    <Card.Title>{offer.title}</Card.Title>
+                    <div className="icon-wrapper">
+                      <FontAwesomeIcon icon={offer.icon} className="display-4" />
+                    </div>
+                    <Card.Title className="text-yellow">{offer.title}</Card.Title>
                     <Card.Text>{offer.description}</Card.Text>
-                    <small className="text-muted">Valid until: {offer.validUntil}</small>
+                    <small className="text-white-50">Valid until: {offer.validUntil}</small>
                   </Card.Body>
                 </Card>
               </Col>
@@ -309,33 +300,35 @@ const App = () => {
       </section>
 
       {/* Footer */}
-      <footer className="footer">
+      <footer className="bg-purple text-white py-5">
         <Container>
           <Row>
-            <Col md={4}>
-              <h3>Contact Us</h3>
-              <p>123 KS Rao Road</p>
-              <p>Hampankatta, Mangalore - 575001</p>
+            <Col md={4} className="mb-4 mb-md-0">
+              <h5>Contact Us</h5>
+              <p>123 Ice Cream Street, Mangalore</p>
               <p>Phone: +91 98765 43210</p>
               <p>Email: info@idealcafe.com</p>
             </Col>
-            <Col md={4}>
-              <h3>Hours</h3>
-              <p>Monday - Friday: 11AM - 9PM</p>
-              <p>Saturday - Sunday: 10AM - 10PM</p>
+            <Col md={4} className="mb-4 mb-md-0">
+              <h5>Opening Hours</h5>
+              <p>Monday - Friday: 10 AM - 10 PM</p>
+              <p>Saturday - Sunday: 9 AM - 11 PM</p>
             </Col>
             <Col md={4}>
-              <h3>Follow Us</h3>
-              <div className="social-links">
-                <a href="#facebook">Facebook</a>
-                <a href="#instagram">Instagram</a>
-                <a href="#twitter">Twitter</a>
+              <h5>Follow Us</h5>
+              <div className="d-flex gap-3">
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-white text-decoration-none">
+                  <FontAwesomeIcon icon={faFacebook} />
+                </a>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="text-white text-decoration-none">
+                  <FontAwesomeIcon icon={faInstagram} />
+                </a>
+                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="text-white text-decoration-none">
+                  <FontAwesomeIcon icon={faTwitter} />
+                </a>
               </div>
             </Col>
           </Row>
-          <div className="footer-bottom">
-            <p>&copy; 2024 Ideal Cafe, Mangalore. All rights reserved.</p>
-          </div>
         </Container>
       </footer>
 
@@ -352,7 +345,7 @@ const App = () => {
                 <ListGroup.Item key={item.id} className="d-flex justify-content-between align-items-center">
                   <div>
                     <h6>{item.name}</h6>
-                    <small>₹{item.price} each</small>
+                    <small>₹{item.price}</small>
                   </div>
                   <div className="d-flex align-items-center">
                     <Button 

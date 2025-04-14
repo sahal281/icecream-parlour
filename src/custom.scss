@@ -1,0 +1,783 @@
+// Custom theme colors
+$purple: #6f42c1;
+$purple-light: #8a63d2;
+$purple-lighter: #a585e0;
+$purple-dark: #6D28D9;
+
+$pink: #e83e8c;
+$pink-light: #ec5ca3;
+$pink-lighter: #f07ab9;
+
+$blue: #0d6efd;
+$blue-light: #3d8bfd;
+$blue-lighter: #6ea8fe;
+
+$yellow: #ffc107;
+$yellow-light: #ffca2c;
+$yellow-lighter: #ffd351;
+
+// Override Bootstrap's default colors
+$primary: $purple;
+$secondary: $pink;
+$success: $blue;
+$info: $yellow;
+
+// Import Bootstrap
+@import "bootstrap/scss/bootstrap";
+
+// Custom classes
+.bg-purple {
+  background-color: $purple !important;
+}
+
+.text-purple {
+  color: $purple !important;
+}
+
+.bg-pink {
+  background-color: $pink !important;
+}
+
+.text-pink {
+  color: $pink !important;
+}
+
+.bg-blue {
+  background-color: $blue !important;
+}
+
+.text-blue {
+  color: $blue !important;
+}
+
+.bg-yellow {
+  background-color: $yellow !important;
+}
+
+.text-yellow {
+  color: $yellow !important;
+}
+
+// Button variants
+.btn-purple {
+  background-color: $purple;
+  border-color: $purple;
+  color: white;
+
+  &:hover {
+    background-color: $purple-dark;
+    border-color: $purple-dark;
+    color: white;
+  }
+}
+
+.btn-pink {
+  background-color: $pink;
+  border-color: $pink;
+  color: white;
+
+  &:hover {
+    background-color: darken($pink, 10%);
+    border-color: darken($pink, 10%);
+    color: white;
+  }
+}
+
+.btn-blue {
+  background-color: $blue;
+  border-color: $blue;
+  color: white;
+
+  &:hover {
+    background-color: darken($blue, 10%);
+    border-color: darken($blue, 10%);
+    color: white;
+  }
+}
+
+.btn-yellow {
+  background-color: $yellow;
+  border-color: $yellow;
+  color: white;
+
+  &:hover {
+    background-color: darken($yellow, 10%);
+    border-color: darken($yellow, 10%);
+    color: white;
+  }
+}
+
+// Card styles
+.card {
+  border-radius: 25px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// Gradient backgrounds
+.gradient-purple {
+  background: linear-gradient(135deg, $purple, $purple-dark);
+}
+
+.gradient-pink {
+  background: linear-gradient(135deg, $pink, $pink-light);
+}
+
+.gradient-blue {
+  background: linear-gradient(135deg, $blue, $blue-light);
+}
+
+.gradient-yellow {
+  background: linear-gradient(135deg, $yellow, $yellow-light);
+}
+
+// Special section styles
+.special-offers {
+  background: linear-gradient(135deg, $purple, $pink);
+}
+
+.flavors-section {
+  padding: 5rem 0;
+  background-color: #f8f9fa;
+  
+  .card {
+    border: none;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: fadeInUp 0.5s ease;
+    animation-fill-mode: both;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    
+    &:hover {
+      transform: translateY(-15px) scale(1.03);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      
+      .card-img-top {
+        transform: scale(1.15);
+      }
+      
+      .card-title {
+        color: var(--secondary);
+        transform: translateY(-5px);
+      }
+      
+      .price-tag {
+        background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+        transform: translateY(-5px);
+      }
+      
+      .btn {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+    }
+    
+    .card-img-top {
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .card-body {
+      padding: 1.5rem;
+      transition: all 0.4s ease;
+    }
+    
+    .card-title {
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      transition: all 0.4s ease;
+    }
+    
+    .price-tag {
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 18px;
+      font-weight: 600;
+      display: inline-block;
+      transition: all 0.4s ease;
+    }
+    
+    .btn {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+  }
+}
+
+// Navbar styles
+.navbar {
+  background: linear-gradient(135deg, $purple, $pink) !important;
+  border-radius: 20px;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+// Footer styles
+footer {
+  background: linear-gradient(135deg, $purple-dark, $blue) !important;
+}
+
+// Price tag styles
+.price-tag {
+  background: linear-gradient(45deg, $purple, $purple-light);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 18px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba($purple, 0.3);
+}
+
+// Icon styles
+.icon-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+// Hero section styles
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.imgur.com/XYZ123.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  padding: 2rem;
+
+  h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: $yellow-light !important;
+    animation: fadeInDown 1s ease-out;
+  }
+
+  p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    color: $yellow-lighter !important;
+    animation: fadeInUp 1s ease-out;
+  }
+
+  .btn {
+    animation: fadeIn 1.5s ease-out;
+  }
+}
+
+// Body styles
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(135deg, $purple-lighter, $blue-lighter) !important;
+  color: $purple-dark;
+  transition: background-color 0.3s ease;
+}
+
+// Dark mode styles
+.dark-mode {
+  background: linear-gradient(135deg, $purple-dark, $blue) !important;
+  color: white;
+
+  .navbar {
+    background: linear-gradient(135deg, $purple-dark, $blue) !important;
+  }
+
+  .card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .footer {
+    background: linear-gradient(135deg, $purple-dark, $blue) !important;
+  }
+}
+
+// Enhanced button styles
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-radius: 20px;
+  padding: 0.5rem 1.5rem;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Order Now button specific styles
+.btn-blue {
+  background: linear-gradient(45deg, $blue, $blue-light);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba($blue, 0.4);
+  
+  &:hover {
+    background: linear-gradient(45deg, $blue-light, $blue);
+    color: white;
+    box-shadow: 0 6px 20px rgba($blue, 0.6);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: 0.5s;
+  }
+
+  &:hover::before {
+    left: 100%;
+  }
+}
+
+// Flavor card Order Now button
+.btn-pink {
+  background: linear-gradient(45deg, $pink, $pink-light);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba($pink, 0.4);
+  
+  &:hover {
+    background: linear-gradient(45deg, $pink-light, $pink);
+    color: white;
+    box-shadow: 0 6px 20px rgba($pink, 0.6);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: 0.5s;
+  }
+
+  &:hover::before {
+    left: 100%;
+  }
+}
+
+// Image container
+.card-img-container {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+// Special offers cards
+.special-offers .card {
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+// Footer sections
+footer .col {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  padding: 1.5rem;
+  margin: 0.5rem;
+}
+
+:root {
+  --primary: #{$purple};
+  --primary-light: #{$purple-light};
+  --primary-lighter: #{$purple-lighter};
+  --secondary: #{$pink};
+  --secondary-light: #{$pink-light};
+  --secondary-lighter: #{$pink-lighter};
+  --success: #{$blue};
+  --success-light: #{$blue-light};
+  --success-lighter: #{$blue-lighter};
+  --info: #{$yellow};
+  --info-light: #{$yellow-light};
+  --info-lighter: #{$yellow-lighter};
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  
+  .navbar {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light)) !important;
+  }
+  
+  .card {
+    background-color: #2d2d2d;
+    border-color: #3d3d3d;
+  }
+  
+  .footer {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  }
+}
+
+.navbar {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  padding: 1rem 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  
+  .navbar-brand {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: white;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  
+  .nav-link {
+    color: white;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+  }
+  
+  .form-control {
+    border-radius: 20px;
+    border: none;
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+}
+
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.imgur.com/XYZ123.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(111, 66, 193, 0.7), rgba(232, 62, 140, 0.7));
+    z-index: 1;
+  }
+  
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+  
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease;
+  }
+  
+  p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease 0.3s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+  
+  .btn {
+    animation: fadeInUp 1s ease 0.6s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+}
+
+.special-offers {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+    opacity: 0.1;
+  }
+  
+  .card {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 22px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    
+    &:hover {
+      transform: translateY(-10px) scale(1.02);
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      
+      .icon-wrapper {
+        transform: rotate(15deg) scale(1.1);
+        background: rgba(255, 255, 255, 0.3);
+      }
+    }
+    
+    .icon-wrapper {
+      width: 80px;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+.footer {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: white;
+  padding: 4rem 0 2rem;
+  
+  h5 {
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background-color: var(--info);
+      border-radius: 3px;
+    }
+  }
+  
+  a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      color: var(--info);
+      transform: translateY(-2px);
+    }
+  }
+  
+  .social-icons {
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      margin-right: 1rem;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background: var(--info);
+        transform: translateY(-5px);
+      }
+    }
+  }
+}
+
+.btn {
+  border-radius: 20px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  &.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    border: none;
+    
+    &:hover {
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+    }
+  }
+  
+  &.btn-secondary {
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+    border: none;
+    
+    &:hover {
+      background: linear-gradient(135deg, var(--secondary-light), var(--secondary));
+    }
+  }
+  
+  &.btn-success {
+    background: linear-gradient(135deg, var(--success), var(--success-light));
+    border: none;
+    
+    &:hover {
+      background: linear-gradient(135deg, var(--success-light), var(--success));
+    }
+  }
+  
+  &.btn-info {
+    background: linear-gradient(135deg, var(--info), var(--info-light));
+    border: none;
+    
+    &:hover {
+      background: linear-gradient(135deg, var(--info-light), var(--info));
+    }
+  }
+}
+
+.modal-content {
+  border-radius: 25px;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  
+  .modal-header {
+    border-bottom: none;
+    padding: 1.5rem;
+    
+    .modal-title {
+      color: var(--primary);
+      font-weight: 600;
+    }
+  }
+  
+  .modal-body {
+    padding: 1.5rem;
+  }
+  
+  .modal-footer {
+    border-top: none;
+    padding: 1.5rem;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 50vh;
+    
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+  
+  .flavors-section {
+    .card {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    min-height: 40vh;
+    
+    h1 {
+      font-size: 2rem;
+    }
+    
+    p {
+      font-size: 1rem;
+    }
+  }
+  
+  .navbar {
+    .navbar-brand {
+      font-size: 1.25rem;
+    }
+  }
+} 
